@@ -1,11 +1,10 @@
-// Exercise 13-10: Develop the beginnings of a Tic-Tac-Toe game. Create a Cell object that 
-// can exist in one of two states: "O" or nothing. When you click on the cell, its state changes from 
-// nothing to  "O". Here is a framework to get you started.
-
 // A Cell object  
 class Cell  {   
+  //coords
   float x,y;  
-  float w,h;  
+  //cell width and height
+  float w,h;
+  // individual cell state
   int state;  
 
   // Cell Constructor  
@@ -14,11 +13,14 @@ class Cell  {
     y = tempY;
     w = tempW;
     h = tempH;
-    //state = int(random(3)); 
+    
+    // Random ints in some cells
+    // state = int(random(3)); 
   }   
 
   void click(int mx, int my)  {   
     if (mx > x && mx < x + w && my > y && my < y + h) {
+      //Changethe state of one of the cells
       state = (state + 1) % 3; 
     }
     
@@ -29,7 +31,8 @@ class Cell  {
     noFill();
     rect(x,y,w,h);
     
-    int b = 8;
+    // line part
+    int b = 19;
     
     if (state == 0) {
       // nothing
